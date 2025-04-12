@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Sports Field</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="chatbot-ai/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/logo.png" alt="Logo Sports Field">
+            <h1>Sports Field</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active" onclick="showSection('home-section')">Trang chủ</a></li>
+                <li><a href="#" onclick="showSection('booking-section')">Đặt sân</a></li>
+                <li><a href="#" onclick="showSection('history-section')">Lịch hẹn</a></li>
+                <li><a href="#" onclick="showSection('account-section')">Tài khoản</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-main">
+        <div class="icons-left">
+            <img src="image/2.png" alt="">
+            <img src="image/4.png" alt="">
+            <img src="image/3.png" alt="">
+            <img src="image/5.png" alt="">
+        </div>
+        <main>
+            <!-- Trang chủ -->
+            <section id="home-section" class="active">
+                <div class="home-content">
+                    <div class="main-text">
+                        <h2>Chào mừng bạn đến với Sports Field</h2>
+                        <h3>Dịch vụ đặt sân thể thao trực tuyến tại Thái Nguyên</h3>
+                        <ul>
+                            <li>Không giới hạn thiết bị</li>
+                            <li>Mọi lúc mọi nơi</li>
+                            <li>Kết nối chủ sân với người dùng nhanh chóng</li>
+                        </ul>
+                    </div>
+                    <div class="device-image">
+                        <img src="image/thiết bị.png" alt="">
+                    </div>
+                </div>
+                <div class="container-imgqc">
+                    <img src="image/10.png" alt="">
+                    <img src="image/11.png" alt="">
+                    <img src="image/12.png" alt="">
+                </div>
+            </section>
+            <!-- Đặt sân -->
+            <section id="booking-section" style="display: none;">
+
+                <div style="display: flex;justify-content: center;">
+                    <h2>Đặt sân</h2>
+                </div>
+                <div class="container-s">
+                    <select id="filter-type" onchange="searchFields()">
+                        <option value="">Tất cả loại sân</option>
+                        <option value="bóng đá">Bóng đá</option>
+                        <option value="pickleball">pickleball</option>
+                        <option value="cầu lông">Cầu lông</option>
+                    </select>
+                    <div class="container-sc">
+                        <div class="search-container">
+                            <span class="fas fa-search"></span>
+                            <input type="text" id="search-field" placeholder="Tìm kiếm sân..." oninput="searchFields()">
+                        </div>
+                    </div>
+                </div>
+                <div class="containe-field">
+                    <div id="field-list"></div>
+                </div>
+            </section>
+            <!-- Lịch hẹn -->
+            <section id="history-section" style="display: none;">
+                <h2>Lịch sử đặt sân</h2>
+                <div id="history-list"></div>
+            </section>
+            <!-- Tài khoản -->
+            <section id="account-section" style="display: none;">
+                <h2>Tài khoản</h2>
+                <div id="user-info">
+                    <p><strong>Họ và tên:</strong> <span id="user-fullname"></span></p>
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    <p><strong>Số điện thoại:</strong> <span id="user-phone"></span></p>
+                    <p><strong>Vai trò:</strong> <span id="user-role"></span></p>
+                    <button onclick="logout()">Đăng xuất</button>
+                </div>
+            </section>
+        </main>
+        <div class="icons-left">
+            <img src="image/2l.png" alt="">
+            <img src="image/4l.png" alt="">
+            <img src="image/3l.png" alt="">
+            <img src="image/5l.png" alt="">
+        </div>
+        <!-- Nút mở chatbox -->
+        <button id="chat-toggle"><img src="image/iconhotro.png" alt=""></button>
+        <!-- Chatbox -->
+        <div id="chat-container">
+            <div id="chat-header">
+                <span>Hỗ trợ khách hàng Tự Động</span>
+                <button id="chat-close">✖</button>
+            </div>
+            <div id="chat-box"></div>
+            <div id="chat-input">
+                <input type="text" id="user-input" placeholder="Nhập câu hỏi...">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal đặt sân -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookingModal()">×</span>
+            <h2>Đặt sân</h2>
+            <div id="booking-timeline" style="display: none;">
+                <div id="timeline">
+                    <div id="time-marks"></div>
+                    <div id="booked-slots"></div>
+                    <div id="selected-range"></div>
+                    <div id="start-handle"></div>
+                    <div id="end-handle"></div>
+                </div>
+                <p>Thời gian: <span id="time-range"></span></p>
+                <button onclick="bookField()">Đặt sân</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script src="js/main.js"></script>
+    <script src="chatbot-ai/script.js"></script>
+</body>
+
+</html>

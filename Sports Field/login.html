@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="image/logo.png" alt="Logo">
+        </div>
+        <h2>Đăng nhập</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Địa chỉ email</label>
+                <input type="email" id="email" placeholder="Nhập địa chỉ email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="login()">Đăng nhập</button>
+            </div>
+            <p>Chưa có tài khoản? <a href="signup.html">Đăng ký ngay</a></p>
+        </form>
+    </div>
+    <div id="user-info" style="display: none;">
+        <span id="user-email"></span>
+        <button onclick="logout()">Đăng xuất</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script src="js/login.js"></script>
+    
+</body>
+</html>

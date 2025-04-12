@@ -1,0 +1,162 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+ }
+
+
+
+body {
+    background-color: #d3d9df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* Khi vai trò là owner, đổi màu nền */
+.signup-container.owner {
+    background-color: #fff8dc; /* Màu vàng nhạt */
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Đặt chữ bên dưới nút */
+    align-items: flex-end; /* Căn phải */
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Kích thước giống hình */
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Màu xám nhạt khi tắt */
+    border-radius: 24px; /* Bo góc tròn hơn */
+    transition: 0.3s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ để đẹp hơn */
+}
+
+input:checked + .toggle-slider {
+    background-color: #b22222; /* Màu đỏ khi bật */
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px); /* Điều chỉnh vị trí nút trượt khi bật */
+}
+
+.role-label-container {
+    margin-top: 5px; /* Khoảng cách giữa nút và chữ */
+    text-align: center;
+}
+
+#role-label {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #b22222;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8b1a1a;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

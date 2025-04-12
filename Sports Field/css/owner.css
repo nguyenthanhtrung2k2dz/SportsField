@@ -1,0 +1,436 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #6F4E37;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo{
+    display: flex;
+}
+.logo img {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    display: inline;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+.logo h2{
+    margin-left: 5px;
+    font-size: 15px;
+    animation: doiMauChu 10s infinite;
+
+}
+@keyframes doiMauChu {
+    0% { color: rgb(247, 75, 75); }
+    14% { color: orange; }
+    28% { color: rgb(121, 121, 45); }
+    42% { color: green; }
+    57% { color: rgb(67, 67, 182); }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: rgb(136, 34, 34); }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a.active{
+    background-color: #A67B5B;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #A67B5B;
+    border-radius: 5px;
+}
+
+
+/* Trang chủ Owner */
+.container-main{
+    display: flex;
+    background-color: #6F4E37;
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    }
+     
+    main {
+    border-radius: 25px;
+    width: 86%;
+    height: auto;
+    background-color: #6F4E37;
+    }
+    
+    section {
+        background-color: #ECB176;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+    
+    section.active {
+        display: block;
+    }
+    
+    .home-content {
+        display: flex;
+        height: 350px;
+        align-items: center;
+        border-radius: 10px;
+    }
+    
+    .icons-left {
+        width: 7%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .icons-left img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .main-text {
+       width: 65%;
+        margin-left: 100px;
+    }
+    
+    .main-text h2 {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .main-text h3 {
+        width: 80%;
+        font-size: 40px;
+        color: #27374D;
+        margin-bottom: 20px;
+    }
+    
+    .main-text ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .main-text ul li {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+    }
+    
+    .main-text ul li:before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #526375;
+    }
+    
+    .device-image img {
+        width: 450px;
+        height: 400px;
+    }
+    .container-imgqc{
+        margin-left: 100px;
+        width: 100%;
+        height: 230px;
+        display: flex;
+        gap: 5%;
+    }
+    img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+/* Quản lý sân */
+.field-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.field-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.field-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.field-card button {
+    padding: 5px 10px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.field-card button:hover {
+    background-color: #8b1a1a;
+}
+
+#add-field-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#add-field-form button {
+    margin-right: 10px;
+    padding: 10px 20px;
+}
+
+/* Xác nhận đặt sân */
+#booking-requests {
+    margin-top: 10px;
+}
+
+/* Tài khoản */
+#user-info {
+    margin-top: 20px;
+}
+
+#user-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#user-info button {
+    padding: 10px 20px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#user-info button:hover {
+    background-color: #8b1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .device-image img {
+        height: 100px;
+    }
+}
+.map-link {
+    color: #1a73e8;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+/* Định dạng chung cho section thống kê */
+#statistics-section {
+    padding: 20px;
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    max-width: 1000px; /* Giới hạn chiều rộng tối đa */
+    margin: 20px auto; /* Căn giữa section */
+}
+
+/* Định dạng tiêu đề chính */
+#statistics-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #4CAF50; /* Đường viền dưới màu xanh lá */
+    padding-bottom: 10px;
+}
+
+/* Định dạng các label */
+#statistics-section label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Định dạng select và input date */
+#statistics-section select,
+#statistics-section input[type="date"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 180px; /* Chiều rộng cố định cho input */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng khi focus */
+#statistics-section select:focus,
+#statistics-section input[type="date"]:focus {
+    border-color: #4CAF50; /* Viền màu xanh lá khi focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Bóng đổ nhẹ khi focus */
+    outline: none;
+}
+
+/* Định dạng phần tổng quan */
+#statistics-result h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #4CAF50; /* Màu xanh lá cho tiêu đề */
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #4CAF50; /* Đường viền trái */
+    padding-left: 10px;
+}
+
+/* Định dạng các đoạn văn trong tổng quan */
+#statistics-result p {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Làm nổi bật số liệu trong tổng quan */
+#statistics-result p strong {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+/* Định dạng bảng thống kê */
+#statistics-result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Đảm bảo border-radius áp dụng cho các góc */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng các ô trong bảng */
+#statistics-result table th,
+#statistics-result table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Định dạng tiêu đề bảng */
+#statistics-result table th {
+    background-color: #4CAF50; /* Màu xanh lá cho tiêu đề bảng */
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Định dạng các hàng chẵn */
+#statistics-result table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu nền nhẹ cho hàng chẵn */
+}
+
+/* Hiệu ứng hover trên các hàng */
+#statistics-result table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Định dạng khi không có dữ liệu */
+#statistics-result p:not(:last-child) {
+    font-style: italic;
+    color: #777;
+    text-align: center;
+    margin: 20px 0;
+}
